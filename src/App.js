@@ -21,14 +21,21 @@ function App() {
 				title: data.name,
 				amount: data.price,
 				date: new Date(data.today),
-			},
+			}, ...expenses
 		]);
 	};
+	const deleteExpenseItem = (id) => {
+		console.log("expenses", expenses, typeof expenses)
+
+		const newfilterArray = expenses.filter(item => item.id !== id)
+		setExpenses(newfilterArray)
+
+	}
 
 	return (
 		<>
 			<PaymentForm getPaymentFormData={getPaymentFormData} />
-			<Expenses items={expenses} />
+			<Expenses items={expenses} deleteExpenseItem={deleteExpenseItem} />
 		</>
 	);
 }
