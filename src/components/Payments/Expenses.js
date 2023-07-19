@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
@@ -11,6 +11,23 @@ const Expenses = (props) => {
 	const filterChangeHandler = (selectedYear) => {
 		setFilteredYear(selectedYear);
 	};
+	//filter 는 조건에맞는 배열을 새로운배열을 만듬
+	const filteredExpensese = props.items.filter((expenses) => {
+		return expenses.date.getFullYear().toString() === filteredYear
+	})
+
+	let expensesContent = <p>값이 없습니다.</p>;
+
+	console.log(filteredExpensese.length)
+	if (filteredExpensese.length > 0) {
+		expensesContent = filteredExpensese.map((item) =>
+			<ExpenseItem
+				title={item.title}
+				amount={item.amount}
+				date={item.date}
+			/>
+		)
+	}
 
 	return (
 		<Card className="expenses">
@@ -18,13 +35,7 @@ const Expenses = (props) => {
 				selected={filteredYear}
 				onChangeFilter={filterChangeHandler}
 			/>
-			{props.items.map((item) => (
-				<ExpenseItem
-					title={item.title}
-					amount={item.amount}
-					date={item.date}
-				/>
-			))}
+			{expensesContent}
 		</Card>
 	);
 };
