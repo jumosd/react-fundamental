@@ -19,15 +19,15 @@ const Expenses = (props) => {
 	let expensesContent = <p>값이 없습니다.</p>;
 
 	console.log(filteredExpensese.length)
-	if (filteredExpensese.length > 0) {
-		expensesContent = filteredExpensese.map((item) =>
-			<ExpenseItem
-				title={item.title}
-				amount={item.amount}
-				date={item.date}
-			/>
-		)
-	}
+	// if (filteredExpensese.length > 0) {
+	// 	expensesContent = filteredExpensese.map((item) =>
+	// 		<ExpenseItem
+	// 			title={item.title}
+	// 			amount={item.amount}
+	// 			date={item.date}
+	// 		/>
+	// 	)
+	// }
 
 	return (
 		<Card className="expenses">
@@ -35,7 +35,13 @@ const Expenses = (props) => {
 				selected={filteredYear}
 				onChangeFilter={filterChangeHandler}
 			/>
-			{expensesContent}
+			{filteredExpensese.length > 0 ? filteredExpensese.map((item) =>
+				<ExpenseItem
+					title={item.title}
+					amount={item.amount}
+					date={item.date}
+				/>
+			) : expensesContent}
 		</Card>
 	);
 };
