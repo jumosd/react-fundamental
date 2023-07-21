@@ -10,30 +10,49 @@ function App() {
 			title: "수건",
 			amount: 12.33,
 			date: new Date(2022, 3, 14),
+			category: '애플'
 		},
 		{
 			id: "e2",
 			title: "물티슈",
 			amount: 234.11,
 			date: new Date(2023, 8, 22),
+			category: '애플'
 		},
 		{
 			id: "e3",
 			title: "모니터",
 			amount: 3331.33,
 			date: new Date(2021, 10, 22),
+			category: '애플'
 		},
 		{
 			id: "e4",
 			title: "의자",
 			amount: 298,
 			date: new Date(2022, 1, 31),
+			category: '애플'
 		},
 		{
 			id: "e4",
 			title: "의자",
 			amount: 298,
 			date: new Date(2021, 6, 1),
+			category: '애플'
+		},
+		{
+			id: "2e",
+			title: "수건1",
+			amount: 12.33,
+			date: new Date(2022, 3, 14),
+			category: '애플'
+		},
+		{
+			id: "1e",
+			title: "수건2",
+			amount: 12.33,
+			date: new Date(2022, 3, 14),
+			category: '삼성'
 		},
 	]);
 
