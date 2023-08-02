@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const NewsItemWrapper = styled.div`
-  width: 600px;
+  width: 1200px;
   margin: 50px auto;
   padding: 6px;
   border: 1px solid gray;
@@ -10,8 +10,8 @@ export const NewsItemWrapper = styled.div`
   flex-direction: column;
   
   .image {
-    width: 200px;
-    height: fit-content;
+    width: 500px;
+    height: auto;
   }
   
   .content {
