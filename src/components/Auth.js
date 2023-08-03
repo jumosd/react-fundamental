@@ -1,6 +1,10 @@
 import classes from './Auth.module.css';
+import store from "../store/index"
+import React, { useEffect } from 'react';
+
 
 const Auth = () => {
+
   return (
     <main className={classes.auth}>
       <section>
