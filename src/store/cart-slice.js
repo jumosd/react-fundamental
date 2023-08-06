@@ -37,7 +37,20 @@ const cartSlice = createSlice({
         existingItem.totalPrice = existingItem.totalPrice + newItem.price;
       }
     },
-    removeItemFromCart(state, action) { /*TODO- 여기에 코드를 작성해 주세요*/ },
+    removeItemFromCart(state, action) {
+      const id = action.payload;
+      const existingItem = state.items.find((item) => {
+        return item.id === id
+      })
+      state.totalQuantity--;
+
+      if (existingItem.quantity === 1) {
+        state.items = state.items.filter((item) => item.id !== id)
+      } else {
+        existingItem.quantity--;
+        existingItem.totalPrice -= existingItem.price;
+      }
+    },
 
   }
 })
