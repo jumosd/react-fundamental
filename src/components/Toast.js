@@ -1,12 +1,11 @@
 import React from 'react';
 import './Toast.css';
-import ToastMessage from './ToastMessage';
 
-const Toast = ({ message }) => {
+
+const Toast = ({ message, children }) => {
   return (
     <div className={`toast toast-${message.title}`}>
-      <ToastMessage message={message}/>
-      <button className="toast__button">Dismiss</button>
+      {children}
     </div>
   );
 };

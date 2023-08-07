@@ -1,6 +1,6 @@
 import './App.css';
 import Toast from './components/Toast';
-
+import ToastMessage from './components/ToastMessage';
 function App() {
   const messageArray = [
     {
@@ -20,7 +20,10 @@ function App() {
   return (
     <div className="wrapper">
       {messageArray.map((message) =>
-        <Toast message={message} />
+        <Toast message={message}>
+          <ToastMessage message={message} />
+          <button className="toast__button">Dismiss</button>
+        </Toast>
       )}
     </div>
   );
